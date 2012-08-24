@@ -70,7 +70,6 @@ class PivotalStory(Plugin):
         self.make_story(name, message, event)
 
     def make_story(self, name, message, event):
-        print self.get_option('token', event.project)
         ptracker = PTracker(token=self.get_option('token', event.project))
         story = ptracker.Story()
         story.story_type = "bug"
