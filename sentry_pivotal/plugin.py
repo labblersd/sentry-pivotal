@@ -33,7 +33,6 @@ import sentry_pivotal
 class PivotalSettingsForm(forms.Form):
     token = forms.CharField(label='Pivotal Tracker Access Token', required=True)
     project = forms.IntegerField(label='Project ID', required=True)
-    #vonni_receiver = forms.CharField(label='Vonni Receiver')
 
 class PivotalStory(Plugin):
 
