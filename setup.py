@@ -40,7 +40,7 @@ setup(
     ],
     entry_points={
         'sentry.plugins': [
-            'trello = sentry_pivotal.plugin:PivotalStory'
+            'pivotal = sentry_pivotal.plugin:PivotalStory'
         ]
     },
     include_package_data=True,
