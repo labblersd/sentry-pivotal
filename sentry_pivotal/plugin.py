@@ -37,6 +37,8 @@ class PivotalSettingsForm(forms.Form):
 
 class PivotalStory(Plugin):
 
+    author = "Labbler Team"
+    author_url = "http://labbler.com"
     version = sentry_pivotal.VERSION
     project_conf_form = PivotalSettingsForm
 
