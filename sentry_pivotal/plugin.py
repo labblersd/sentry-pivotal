@@ -30,6 +30,7 @@ from sentry.plugins import Plugin
 from pyvotal import PTracker
 import sentry_pivotal
 
+DEFAULT_STORY_TYPE = "bug"
 
 class PivotalSettingsForm(forms.Form):
     token = forms.CharField(label='Pivotal Tracker Access Token', required=True)
@@ -37,8 +38,6 @@ class PivotalSettingsForm(forms.Form):
     #vonni_receiver = forms.CharField(label='Vonni Receiver')
 
 class PivotalStory(Plugin):
-
-    self.default_type = "bug"
 
     version = sentry_pivotal.VERSION
     project_conf_form = PivotalSettingsForm
@@ -75,7 +74,7 @@ class PivotalStory(Plugin):
 
          ptracker = PTracker(self.get_option('token', event.project))
          story = ptracker.Story()
-         story.type = self.default_type
+         story.type = DEFAULT_STORY_TYPE
          story.name = name
          project = ptracker.projects.get(self.get_option('project', event.project))
          story = project.stories.add(story)
