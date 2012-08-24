@@ -72,7 +72,7 @@ class PivotalStory(Plugin):
 
     def make_story(self, name, message, event):
         print self.get_option('token', event.project)
-        ptracker = PTracker(self.get_option('token', event.project))
+        ptracker = PTracker(token=self.get_option('token', event.project))
         story = ptracker.Story()
         story.type = DEFAULT_STORY_TYPE
         story.name = name
