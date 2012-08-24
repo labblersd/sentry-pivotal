@@ -54,7 +54,7 @@ class PivotalStory(Plugin):
         if not is_new or not self.is_setup(event.project):
             return
 
-        name = '[SENTRY]:%s: %s at %s' % (event.get_level_display().upper(),
+        name = '%s: %s at %s' % (event.get_level_display().upper(),
                             event.error().split('\n')[0], event.project)
 
         link = '%s/%s/group/%d/' % (settings.URL_PREFIX, group.project.slug,
@@ -72,8 +72,9 @@ class PivotalStory(Plugin):
         print self.get_option('token', event.project)
         ptracker = PTracker(token=self.get_option('token', event.project))
         story = ptracker.Story()
-        story.type = "bug"
+        story.story_type = "bug"
         story.name = name
+        story.description = message
         story.labels = "sentry"
         project = ptracker.projects.get(self.get_option('project', event.project))
         story = project.stories.add(story)

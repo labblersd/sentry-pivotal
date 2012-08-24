@@ -27,7 +27,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='sentry-pivotal',
-    version='0.3.6',
+    version='0.3.7',
     author='Labbler',
     author_email='dev@labbler.com',
     url='https://github.com/Labblersd/sentry-pivotal',
