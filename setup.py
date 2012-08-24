@@ -30,7 +30,7 @@ setup(
     version='0.4',
     author='Labbler',
     author_email='dev@labbler.com',
-    url='https://github.com/Labblersd/sentry-pivotal',
+    url='https://github.com/labblersd/sentry-pivotal',
     description='Pivatal Tracker and Sentry friendship plugin.',
     long_description=__doc__,
     license='GPL',
