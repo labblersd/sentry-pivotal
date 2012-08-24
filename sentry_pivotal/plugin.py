@@ -70,12 +70,12 @@ class PivotalStory(Plugin):
 
         self.make_story(name, message, event)
 
-    def make_card(self, name, message, event):
+    def make_story(self, name, message, event):
 
          ptracker = PTracker(self.get_option('token', event.project))
          story = ptracker.Story()
          story.type = DEFAULT_STORY_TYPE
          story.name = name
-         project = ptracker.projects.get(self.get_option('project', event.project))
+         project = ptracker.projects.get(int(self.get_option('project', event.project)))
          story = project.stories.add(story)
 
